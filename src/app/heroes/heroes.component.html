@@ -1,11 +1,9 @@
-<h2>
-  <ul class="heroes">
-    <li *ngFor="let hero of getHeroes()"
-    [class.selected]="hero === getSelectedHero()"
-    (click)="onSelect(hero)">
+<ul class="heroes">
+  <li *ngFor="let hero of getHeroes()">
+    <a routerLink="/heroes/{{hero.id}}/details">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </li>
-  </ul>
-</h2>
+    </a>
+  </li>
+</ul>
 
-<app-hero-detail [hero]="getSelectedHero()"></app-hero-detail>
+<!-- <app-hero-detail [hero]="getSelectedHero()"></app-hero-detail> -->
