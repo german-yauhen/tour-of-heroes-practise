@@ -9,7 +9,7 @@ import { MessagesService } from '../messages.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  
+
   private heroes: Hero[];
   private heroService: HeroService;
   private messagesService: MessagesService;
@@ -28,7 +28,7 @@ export class HeroesComponent implements OnInit {
   }
 
   private retrieveHeroes(): void {
-    this.heroService.publishHeroes().subscribe(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
     this.messagesService.add('HeroComponent: Retrieved heroes.');
   }
 

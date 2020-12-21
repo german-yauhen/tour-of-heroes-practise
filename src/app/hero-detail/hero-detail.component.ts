@@ -32,7 +32,7 @@ export class HeroDetailComponent implements OnInit {
 
   private retrieveHeroById(): void {
     let heroId: number = Number.parseInt(this.route.snapshot.paramMap.get('id'));
-    this.heroService.publishHero(heroId).subscribe(hero => this.hero = hero);
+    this.heroService.getHero(heroId).subscribe(hero => this.hero = hero);
   }
 
 }
