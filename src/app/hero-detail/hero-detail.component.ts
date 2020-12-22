@@ -30,6 +30,10 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
+  public saveUpdate(): void {
+    this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+  }
+
   private retrieveHeroById(): void {
     let heroId: number = Number.parseInt(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(heroId).subscribe(hero => this.hero = hero);
