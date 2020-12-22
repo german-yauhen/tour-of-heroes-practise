@@ -35,7 +35,7 @@ export class InMemoryDataService implements InMemoryDbService {
     return Math.max.apply(
       Math, heroes.map(
         function(hero: Hero): number {
-          return hero.id;
+          return hero.id + 1;
         }
       )
     );
